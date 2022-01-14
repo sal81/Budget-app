@@ -1,38 +1,358 @@
-.App {
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Muli:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color:  aliceblue;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper{
+  width: 90%;
+  max-width:150rem;
+  height: 80vh;
+  background-color: rgba(11, 12, 12, 0.945);
+  color: rgb(159, 159, 180); 
+  /* Income list */
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 5rem rgba(0,0,0,0.7);
+  display: grid;
+  grid-template-columns: minmax(30%, 45rem) repeat(2, minmax(29%, 32rem));
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap:1rem;
+}
+
+.header{
+  grid-column: 1/2;
+  grid-row: 1/4;
+  display:flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 3rem;
+
+}
+
+/* .header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.header h1{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight:400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(235, 15, 15);
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.balance{
+  display:flex;
+  align-items: left;
+  grid-column: 1/3;
+  grid-row: 3/-1;
+  flex-direction:column;
+  text-align: left;
+  margin-top: 2rem;
+  padding-left: 3rem;
+}
+.balance h2{
+  font-family: "Muli", serif;
+  font-size: 1.2rem;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:white;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+.balance h4{
+  font-family: "Muli", serif;
+  font-size: 1rem;
+  color:rgb(240, 241, 245);
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.inc-exp{
+  display: flex;
+  justify-content: start ;
+  margin-top: 5rem;
+  font-family: "Muli", serif;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
   text-align: center;
+
+}
+.plus{
+  color:#118f2a;
+  padding-right: 2rem;
+  font-family: "Muli", serif;
+  
+  text-transform: uppercase;
+}
+  
+.minus{
+  color: rgb(235, 15, 15);
+  font-family: "Muli", serif;  
+  text-transform: uppercase;  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-wrapper {
+  grid-column: 2 / -1;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-group-income {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.input-group-expense {
+  display: flex;
+  flex-direction: column;
+}
+
+.income {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+}
+
+.expense {
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+}
+
+.input-group-income input:not([type="submit"]) {
+  width: 8rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  background: transparent;
+  border-bottom: 0.2rem solid rgb(248, 247, 247);
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 1rem;
+  color: #118f2a;
+  outline: none;
+  transition: border-bottom 0.4s;
+}
+
+.input-group-expense input:not([type="submit"]) {
+  width: 8rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  background: transparent;
+  border-bottom: 0.2rem solid rgb(248, 247, 247);
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 1rem;
+  color: rgb(235, 15, 15);;
+  outline: none;
+  transition: border-bottom 0.4s;
+}
+
+
+.input-group-income input:not([type="submit"]):focus {
+  border-bottom: 0.2rem solid #118f2a;
+}
+
+.input-group-expense input:not([type="submit"]):focus {
+  border-bottom: 0.2rem solid #df1b18;
+}
+
+.input-group-income{
+  width: 8rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.7rem;
+  font-family: "Muli", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: rgb(226, 21, 21);
+  cursor: pointer;
+  margin-top: 1rem;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.input-group{
+  width: 8rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.7rem;
+  font-family: "Muli", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: rgb(230, 28, 28);;
+
+  cursor: pointer;
+  margin-top: 1rem;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+
+.input-group-expense{
+  width: 8rem;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 0.7rem;
+  font-family: "Muli", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: rgb(211, 24, 24);
+
+  cursor: pointer;
+  margin-top: 1rem;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+.input-group-income .button{
+  width: 4rem;
+  padding: 0.4rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-family: "Muli", serif;
+  font-weight: 500;
+  background-color: #118f2a;
   color: white;
+
+  cursor: pointer;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+.input-group-expense .button1{
+  width: 4rem;
+  padding: 0.4rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-family: "Muli", serif;
+  font-weight: 500;
+  background-color: #e21d1a;
+  color: white;
+
+  cursor: pointer;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 
-.App-link {
-  color: #61dafb;
+
+.input-group-income input[type="submit"]:active {
+  transform: translateY(-0.3rem);
+
+}
+.input-group-expense input[type="submit"]:active {
+  transform: translateY(-0.3rem);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.income input[type="submit"] {
+  background-color: #118f2a;
 }
+
+.expense input[type="submit"] {
+  background-color: #dd2421;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+.delete-btn {
+  transform: translateX(3rem);
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  margin: 2px ;
+  color: #d12421;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  outline: none;
+}
+.transactions-income {
+  grid-column: 2 / 3;
+  grid-row: 5 / -1;
+}
+
+.transactions-expense {
+  grid-column: 3 / -1;
+  grid-row: 5 / -1;
+}
+.transaction {
+  background-color: #118f2a;
+  list-style: none;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.1rem;
+  padding-left: 0.1rem;
+  padding-top: 0.2rem;
+  color: #fff;
+  border-radius: 0.3rem;
+  width: 14rem;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+
+
+transactions-transactions-income {
+  background-color: #118f2a;
+}
+
+transactions-transactions-expense  {
+  background-color: #c21815;
+}
+
+ .transaction-text {
+  width: 3rem;
+}
+
+.transaction-amount {
+  transform: translateX(3rem);
+}
+
+
+
+/* @media (max-width: 1500px) {
+  html {
+    font-size: 58%;
+  }
+
+  .app-wrapper {
+    width: 95%;
+    max-width: 140rem;
+    height: 85vh;
+  }
+
+  .balance {
+    margin-top: 6rem;
+  }
+
+  .income-expense {
+    margin-top: 7rem;
+  }
+
+  .transaction-list {
+    max-height: 31rem;
+  }
+
+  .transaction {
+    width: 30rem;
+  }
+} */
+
